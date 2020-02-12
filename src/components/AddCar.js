@@ -28,10 +28,12 @@ class AddCar extends Component {
         e.preventDefault()
         const payload = { ...this.state }
         payload.id = this.props.carTotal + 1
-        delete payload.open
+        //delete payload.open
         console.log("THE CAR", payload)
         // add this.props.addCar function here
+        this.props.addCar(payload)
         // also add this.setState to close the dialog
+        this.setState({ open: false })
     }
 
     componentDidUpdate = (prevProps, prevState) => {
